@@ -34,5 +34,20 @@ if (!isFormValid) {
 }
 });
 
-
+// Fonction pour ajouter un commentaire à la liste.
+function addComment(data) {
+    // Créer le HTML pour le nouveau commentaire en utilisant les données du formulaire.
+    const commentHTML = `
+        <div class="flex space-x-4 text-sm text-gray-500">
+            <div class="flex-1 py-10 border-t border-gray-200">
+                <h3 class="font-medium text-gray-900">${data.firstName} ${data.lastName}</h3>
+                <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+                    <p>${data.message}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    // Insérer le nouveau commentaire HTML à la fin de la liste des commentaires.
+    commentList.insertAdjacentHTML('beforeend', commentHTML);
+    }
 });
